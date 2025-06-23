@@ -6,9 +6,11 @@ from core.project.settings import base
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # first party
     path("", include("core.apps.main.urls", namespace="main")),
     path("news/", include("core.apps.news.urls", namespace="news")),
     path("employees/", include("core.apps.employees.urls", namespace="employees")),
+    path("sectors/", include("core.apps.sectors.urls", namespace="sectors")),
 ]
 
 

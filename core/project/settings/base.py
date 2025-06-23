@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "core.apps.main.apps.MainConfig",
     "core.apps.news.apps.NewsConfig",
     "core.apps.employees.apps.EmployeesConfig",
+    "core.apps.sectors.apps.SectorsConfig",
 ]
 
 MIDDLEWARE = [
