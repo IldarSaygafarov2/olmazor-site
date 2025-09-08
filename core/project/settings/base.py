@@ -1,18 +1,22 @@
 from pathlib import Path
+from environs import Env
 
+env = Env()
+env.read_env('.env')
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
 
-SECRET_KEY = "django-insecure-ce-1w@!()8!mtbc_7f!h6vw@rw2ek!q1teek5767+gie#6sl2k"
+SECRET_KEY = env.str("SECRET_KEY")
 
 
-DEBUG = True
+DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", subcast=str)
+print(ALLOWED_HOSTS)
 
 INSTALLED_APPS = [
+    'jazzmin',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
